@@ -9,6 +9,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
+import store from './redux/store'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -18,6 +19,18 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 );
+
+store.subscribe(() => {
+  ReactDOM.render(
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>,
+    document.getElementById('root')
+  );
+})
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
