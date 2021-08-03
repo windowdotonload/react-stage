@@ -11,7 +11,7 @@ export default class Reduxpre extends Component {
     add = () => {
         // store.dispatch({ type: 'add', data: 2 })
         // store.dispatch(createAddAction(2))
-        store.dispatch(createAsyncAddAction(2, 1000))
+        store.dispatch(createAsyncAddAction(2, 100))
     }
     // componentDidMount() {
     //     store.subscribe(() => {
@@ -22,7 +22,7 @@ export default class Reduxpre extends Component {
         return (
             <div>
                 here show redux<br />
-                {store.getState()}
+                {store.getState().num}
                 <button onClick={this.add}>add</button>
             </div>
         )

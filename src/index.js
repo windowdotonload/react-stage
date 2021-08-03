@@ -10,12 +10,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import store from './redux/store'
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>
+    </Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );
@@ -23,9 +24,9 @@ ReactDOM.render(
 store.subscribe(() => {
   ReactDOM.render(
     <BrowserRouter>
-      <React.StrictMode>
+      <Provider store={store}>
         <App />
-      </React.StrictMode>
+      </Provider>
     </BrowserRouter>,
     document.getElementById('root')
   );

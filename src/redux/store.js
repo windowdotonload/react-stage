@@ -3,9 +3,13 @@
  * @version:
  * @Author: windowdotonload
  */
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import countReducer from './countReducer.js'
+import otherReducer from './otherReducer.js'
 
-
-export default createStore(countReducer, applyMiddleware(thunk))
+const allReducers = combineReducers({
+    num: countReducer,
+    other: otherReducer
+})
+export default createStore(allReducers, applyMiddleware(thunk))

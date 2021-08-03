@@ -20,6 +20,8 @@ import Hello from './hello'
 import { Route } from 'react-router';
 import Reduxpre from './reduxpre';
 import { withRouter } from 'react-router-dom';
+import store from './redux/store'
+import Rredux from './reactRedux'
 
 class App extends React.Component {
 
@@ -41,6 +43,7 @@ class App extends React.Component {
         <Hello topData={this.state.topData} />
         <button onClick={this.goRedux}>Go to Redux</button>
         <Route path='/redux' component={Reduxpre}></Route>
+        <Rredux />
         <header className="App-header" onClick={this.changeProps}>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
