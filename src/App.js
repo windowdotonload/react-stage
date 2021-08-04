@@ -22,7 +22,7 @@ import Reduxpre from './reduxpre';
 import { withRouter } from 'react-router-dom';
 import store from './redux/store'
 import Rredux from './reactRedux'
-
+import HookCom from './hook.js'
 class App extends React.Component {
 
   state = {
@@ -40,6 +40,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <HookCom />
         <Hello topData={this.state.topData} />
         <button onClick={this.goRedux}>Go to Redux</button>
         <Route path='/redux' component={Reduxpre}></Route>
